@@ -18,7 +18,6 @@ function! s:Pmgrep(...)
   let args += len(a:000) ? a:000 : [expand('<cword>')]
 
   cgetexpr system(join(args, ' '))
-  echo join(args, ' ')
   silent exec 'cwin'
 endfunction
 
