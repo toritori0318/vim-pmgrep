@@ -26,7 +26,6 @@ function! s:PmgrepInc(...)
   let args += len(a:000) ? a:000 : [expand('<cword>')]
 
   cgetexpr system(join(args, ' '))
-  echo join(args, ' ')
   silent exec 'cwin'
 endfunction
 
@@ -35,7 +34,6 @@ function! s:PmgrepProject(...)
   let args += len(a:000) ? a:000 : [expand('<cword>')]
 
   cgetexpr system(join(args, ' '))
-  echo join(args, ' ')
   silent exec 'cwin'
 endfunction
 
@@ -63,7 +61,7 @@ function! ExecutePmgrepProject(text)
   let args += [a:text]
 
   cgetexpr system(join(args, ' '))
-  echo join(args, ' ')
+  "echo join(args, ' ')
   silent exec 'cwin'
 endfunction
 
