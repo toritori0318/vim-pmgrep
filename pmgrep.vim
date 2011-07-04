@@ -22,7 +22,7 @@ function! s:Pmgrep(...)
 endfunction
 
 function! s:PmgrepInc(...)
-  let args = ['pm-grep', '--quickfix', '--project', '--inc']
+  let args = ['pm-grep-inc', '--quickfix']
   let args += len(a:000) ? a:000 : [expand('<cword>')]
 
   cgetexpr system(join(args, ' '))
@@ -30,7 +30,7 @@ function! s:PmgrepInc(...)
 endfunction
 
 function! s:PmgrepProject(...)
-  let args = ['pm-grep', '--quickfix', '--project']
+  let args = ['pm-grep-project', '--quickfix']
   let args += len(a:000) ? a:000 : [expand('<cword>')]
 
   cgetexpr system(join(args, ' '))
@@ -57,7 +57,7 @@ function! s:PmgrepProjectVSSub()
 endfunction
 
 function! ExecutePmgrepProject(text)
-  let args = ['pm-grep', '--quickfix', '--project']
+  let args = ['pm-grep-project', '--quickfix']
   let args += [a:text]
 
   cgetexpr system(join(args, ' '))
